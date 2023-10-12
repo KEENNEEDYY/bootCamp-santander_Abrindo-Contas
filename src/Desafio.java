@@ -11,9 +11,11 @@ public class Desafio {
     double saldo = scanner.nextDouble();
 
     //TODO: Criar uma instância de "ContaBancaria" com os valores de Entrada.
+    ContaBancaria conta = new ContaBancaria(numeroConta, nomeTitular, saldo);
 
     System.out.println("Informacoes:");
     //TODO: Imprimir as informações da conta usando o objeto criado no TODO acima.
+    System.out.println(conta);
   }
 }
 
@@ -22,9 +24,30 @@ class ContaBancaria {
   String titular;
   double saldo;
 
-  public Bancaria(int numero, String titular, double saldo) {
+  public ContaBancaria(int numero, String titular, double saldo) {
     this.numero = numero;
     this.titular = titular;
     this.saldo = saldo;
   }
+
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public String getTitular() {
+        return this.titular;
+    }
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    @Override
+    public String toString() {
+        return 
+            "Conta: " + getNumero() + "\n" +
+            "Titular: " + getTitular() + "\n" +
+            "Saldo: R$ " + getSaldo() + "\n";
+    }
+
 }
